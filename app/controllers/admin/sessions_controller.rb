@@ -27,6 +27,8 @@ class Admin::SessionsController < ApplicationController
         else
           flash.now[:error] = "You are not authorized"
         end
+      else
+        flash.now[:error] = "OpenID verification failed in some unexpected way"
       end
       render :action => 'new'
     end
