@@ -80,12 +80,16 @@ describe CommentsController, 'handling commenting' do
   end
 
   def stub_open_id_authenticate(url, status_code, return_value)
-    status = mock("Result", :status => status_code, :server_url => 'http://example.com')
+    status = mock("Result", :status => status_code)
+    
+    status.stub!(:successful?).and_return(status_code == :successful)
+    status.stub!(:message).and_return(status_code == :successful ? '' : 'Failed.')
+    
     registration = {
       "fullname" => "Don Alias",
       "email" => "donalias@enkiblog.com"
     }
-    @controller.stub!(:authenticate_with_open_id).and_yield(status,url, registration).and_return(return_value)
+    @controller.stub!(:authenticate_with_open_id).and_yield(status, url, registration).and_return(return_value)
   end
 
   describe 'with a POST to #index requiring OpenID authentication' do
@@ -129,7 +133,7 @@ describe CommentsController, 'handling commenting' do
     it_should_behave_like("invalid comment")
 
     it 'sets an appropriate error message on the comment' do
-      assigns(:comment).openid_error.should == "Sorry, the OpenID server couldn't be found"
+      assigns(:comment).openid_error.should == "Failed."
     end
   end
 
@@ -147,7 +151,7 @@ describe CommentsController, 'handling commenting' do
     it_should_behave_like("invalid comment")
 
     it 'sets an appropriate error message on the comment' do
-      assigns(:comment).openid_error.should == "OpenID verification was canceled"
+      assigns(:comment).openid_error.should == "Failed."
     end
   end
 
@@ -165,7 +169,7 @@ describe CommentsController, 'handling commenting' do
     it_should_behave_like("invalid comment")
 
     it 'sets an appropriate error message on the comment' do
-      assigns(:comment).openid_error.should == "Sorry, the OpenID verification failed"
+      assigns(:comment).openid_error.should == "Failed."
     end
   end
 
@@ -185,7 +189,7 @@ describe CommentsController, 'handling commenting' do
     it_should_behave_like("creating new comment")
 
     it 'records OpenID authority ' do
-      assigns(:comment).author_openid_authority.should == 'http://example.com'
+      assigns(:comment).author_openid_authority.should == ''
     end
 
     it 'records OpenID identity url' do
