@@ -36,22 +36,17 @@ class CommentsController < ApplicationController
           :optional => [:nickname, :fullname, :email]
         ) do |result, identity_url, registration|
 
-        case result.status
-        when :missing
-          @comment.openid_error = "Sorry, the OpenID server couldn't be found"
-        when :canceled
-          @comment.openid_error = "OpenID verification was canceled"
-        when :failed
-          @comment.openid_error = "Sorry, the OpenID verification failed"
-        when :successful
+        if result.successful?
           @comment.post = @post
 
           @comment.author_url              = @comment.author
           @comment.author                  = (registration["fullname"] || registration["nickname"] || @comment.author_url).to_s
           @comment.author_email            = registration["email"].to_s
-          @comment.author_openid_authority = result.server_url 
+          @comment.author_openid_authority = '' 
 
           @comment.openid_error = ""
+        else
+          @comment.openid_error = result.message
         end
 
         session[:pending_comment] = nil
