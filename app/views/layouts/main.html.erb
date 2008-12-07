@@ -25,6 +25,13 @@
     </div>
   
     <div id="navigation">
+      <h3>Contact</h3>
+      <ul>
+        <li><%= mail_to 'ben@benhamill.com', 'Email', :encode => 'hex', :title => 'Email me.' %></li>
+        <li><%= link_to 'Twitter', 'http://twitter.com/BravoDeltaHotel/' %></li>
+        <li><%= link_to 'LinkedIn', 'http://www.linkedin.com/pub/9/a2a/98' %></li>
+      </ul> <!-- contact -->
+      
       <h3>Pages</h3>
       <ul>
         <% page_links_for_navigation.each do |link| -%>
