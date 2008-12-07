@@ -1,289 +1,290 @@
-/* High level containers */
-body 
-{ 
-  color: black;
-  
+/*** Color Key *****************************************************************
+  logo maroon:      #a00000
+  page background:  #f9f9f9
+  headings:         #666
+  alt-headings:     #444
+  font:             #333
+  grey BG:          #ddd
+  cool grey alt:    #f3f3f5
+  meta-data stuff:  #bbb
+
+
+
+/*** High level containers ****************************************************/
+body { 
+  color: #333;
+  background-color: #f9f9f9;
   font: normal 12px verdana, arial, helvetica, sans-serif;
   line-height: 1.5;
   padding: 0px;
   margin: 0px;
 }
 
-#page_container
-{
-  width: 70em; 
-  position: absolute;
+#page_container {
   min-height: 400px;
-  
-  color: black;
-
-  margin-top: 5px;
-  padding-left: 10px;
-  border-right: solid 1px #aaaaaa;
-  border-top: solid 1px #aaaaaa;
+  padding: 0 150px;
 }
 
-#footer
-{
-  position: absolute;
-  bottom: -1px;
-  right: -1px;
+#main {
+  float: left;
+  width: 85%;
+}
+
+#footer {
   font-size: 8pt;
-  padding-top: 5px;
-  padding-right: 15px;
-  padding-bottom: 5px;
-  padding-left: 5px;
+  padding: 5px 15px 5px 5px;
   color: gray;
-  border-bottom: solid 1px #aaaaaa;
+  clear: both;
+  border-top: solid 1px #aaaaaa;
+  text-align: right;
 }
 
-/* Headings */
-h1#page_heading
-{
+
+
+/*** Headings *****************************************************************/
+h1, h1 a, h2, h2 a, h3, h4, h5 {
+  color: #666;
+  margin: 0;
+}
+
+h1#page_heading {
   font-size: 24pt;
+  margin-bottom: 0;
 }
 
-h2
-{
+h1#page_heading .ruby { /* Maked the 'rb' stand out. */
+  color: #a00000;
+}
+
+h2 {
+  background-color: #ddd;
+  padding: 0 0.5em;
+}
+
+h3 {
   font-size: 1.2em;
-  color: #333333;
+  padding: 0.5ex 0.5em;
+}
+h3, h3 a {
+  color: #444;
 }
 
-h2 a, h3, h4, h5
-{
-  color: #333333;
-}
 
-/* Text */
-p 
-{
+
+/*** Text *********************************************************************/
+p {
   padding: 0px;
   margin-top: 0.5em;
   margin-bottom: 1em;
   margin-left: 0px;
   margin-right: 0px;
+  text-align: justify;
 }
 
-strong
-{
-  color: #333333;
+strong {
+  color: #666;
 }
-/* Links */
-.openid
-{
+
+code {
+  font-family: 'FreeMono', 'Courier New', 'Terminal', monospace;
+}
+
+
+
+/*** Links ********************************************************************/
+.openid {
   background-image: url("/images/openid_icon.png");
   padding-left: 15px;
   background-repeat: no-repeat;
   background-position: 0px 2px;
 }
 
-a 
-{
-  color: #000051;
-  
+a {
+  color: #a00000;
   text-decoration: none;    
 }
   
-small a, label a
-{
+small a, label a {
   text-decoration: underline;
 }
 
-a:hover
-{
+a:hover {
   text-decoration: underline;    
 }
   
-#footer a
-{
+#footer a {
   color: gray;
   text-decoration: underline;
 }
 
-img
-{
+img {
   border: solid 1px black;
 }
 
-/* Two columns */
-#navigation 
-{
-  position: absolute;
-  width: 10em;
-  top: -1px; 
-  right: -1px;
 
-  border: none;
-  border-left: solid 1px #aaaaaa;
-  border-bottom: solid 1px #aaaaaa;
-  border-top: solid 1px white;
-  border-right: solid 1px white;
 
-  padding: 10px;
+/*** Navigation ***************************************************************/
+#navigation {
+  float: right;
+  width: 15%;
+  background-color: #ddd;
+  padding: 10px 0;
 }
 
-#navigation h2
-{
+#navigation>* {
+  margin: 0 10px;
+  padding-bottom: 1em;
+}
+
+#navigation h3 {
   display: inline;
+  padding: 0.5em 0 0;
 }
 
-
-#navigation label
-{
+#navigation label {
   margin-left: 0;
   font-style: normal;
 }
 
-#navigation ul
-{
-  padding-left: 10px;
-  
-  margin-left: 0px;
-  margin-top: 0px;
+#navigation ul {
+  padding-left: 15px;
   list-style: none;
 }
   
-#navigation ul li
-{
-  padding-left: 0px;
-  margin-left: 0px;
+#navigation ul li {
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
 }
 
-#navigation h3
-{
+#navigation h3 {
   font-size: 1.2em;
   font-weight: bold;
-  font-family: verdana,arial,helvetica,sans-serif;
+  font-family: verdana, arial, helvetica, sans-serif;
 }
 
-#navigation input
-{
+#navigation input {
   border: solid 1px black;
   width: 100%;
 }
 
-#navigation form
-{
-  margin-bottom: 1em;
+#navigation form {
+  padding: 0;
 }
 
-#main 
-{
-  padding-right: 150px;
-  padding-left: 0px;
-  padding-top: 15px;
-  padding-bottom: 40px;
+
+/*** Posts ********************************************************************/
+.entrybody, .page {
+  padding: 0 15px;
 }
 
-div.meta
-{
- margin-top: 1em;
- margin-bottom: 3em; 
-}
-/* Formatting */   
 
-.meta ul
-{
+
+/*** Meta-data ****************************************************************/ 
+div.meta {
+ margin: 1em 15px 1em 0;
+ border-top: dotted #bbb 1px;
+}
+
+.meta ul {
   list-style: none;
   margin: 0px;
-  padding-left: 0em;
+  padding-left: 15px;
   padding-bottom: 0.5em;
   display: inline;
   color: #cccccc;
   font-size: 10pt;
 }
-.archive-month .tags
-{
-  color: #bbbbbb;
+
+.meta a, .archive-month .tags a {
+  color: #bbb;
+  border-bottom: dotted 1px #bbb;
 }
 
-.meta a, .archive-month .tags a
-{
-  color: #bbbbbb;
-  border-bottom: dotted 1px #bbbbbb;
-}
-
-.meta a:hover
-{
+.meta a:hover {
   text-decoration: none;
 }
 
-.meta ul li
-{
+.meta ul li {
   display: inline;
 }
  
-.meta ul li:after
-{
+.meta ul li:after {
   content: " | ";
 }
 
-.meta ul li:last-child:after
-{
+.meta ul li:last-child:after {
   content: "";
 }
 
-h2
-{
-  margin-bottom: 0px;
-}
-
-.separator 
-{
+.separator {
   height: 1px;
   margin-top:5px;
   clear: both;
 }
 
-/* Forms */
-label
-{
+
+/*** Archives *****************************************************************/
+#archives {
+  padding-left: 1em;
+}
+
+.archive-month {
+  margin-top: 0;
+}
+
+.archive-month .tags {
+  color: #bbb;
+}
+
+
+
+/*** Forms ********************************************************************/
+label {
   margin-left: 1em;
 }
 
-textarea, select
-{
+textarea, select {
   font: normal 12px verdana, arial, helvetica, sans-serif;
 }
 
-textarea
-{
+textarea {
   width: 500px;
 }
 
-#project_summary
-{
+#project_summary {
   height: 150px;
 }
 
-#new_comment textarea, #edit_comment textarea
-{
+#new_comment textarea, #edit_comment textarea {
   height: 150px;
 }
 
-.alt, .container_alt
-{
-  background-color: #fafafa;
+
+
+/*** Comments *****************************************************************/
+.commentlist {
+  padding-right: 15px;
 }
 
+.alt, .container_alt {
+  background-color: #f3f3f5;
+}
 
-div.comments div.body
-{
+div.comments div.body {
   padding: 5px;
 }
-div.comments div.meta
-{
+
+div.comments div.meta {
   min-height: 0px;
   padding: 0px
 }
   
-div.comments div.separator
-{
+div.comments div.separator {
   height: 10px;
 }
 
-div.errors
-{
+div.errors {
   border: solid 1px red;
   background-color: #ffcccc;
   padding: 5px;
@@ -291,30 +292,25 @@ div.errors
   width: 485px;
 }
 
-div.errors h3
-{
+div.errors h3 {
   font-size: 1.0em;
 }
 
-.fieldWithErrors
-{
+.fieldWithErrors {
   display: inline;
 }
 
-span.error
-{
+span.error {
   font-weight: bold;
-  }
+}
   
-hr
-{
+hr {
   border-top: dotted 1px black;
   border-bottom: none;
   height: 1px;
 }
 
-#preview
-{
+#preview {
   height: 200px;
   overflow: auto;
 }
@@ -323,14 +319,14 @@ hr
   background-color: #f8f8f8;
   border: 1px solid silver;
   padding: 10px;
+  margin-right: 15px;
 }
 
-/* Syntax */
+/*** Syntax *******************************************************************/
 
 
-/* TOC */
-fieldset.toc
-{
+/*** TOC **********************************************************************/
+fieldset.toc {
   float: right; 
   border: dotted 1px black; 
   background-color: #fafafa;
@@ -338,20 +334,17 @@ fieldset.toc
   margin-left: 5px;
 }
 
-.toc legend
-{
+.toc legend {
   font-weight: bold;
 }
 
-.toc ol
-{
+.toc ol {
   margin: 0px;
   padding-left: 0px;
   list-style-position: inside;
 }
 
-.toc ol ol
-{
+.toc ol ol {
   list-style-type: lower-alpha;
   padding-left: 15px;
 }
@@ -369,101 +362,115 @@ pre.ruby .string { color: #b77c0a; }
   color: #100;
   margin-bottom: 1em;
 }
-.CodeRay pre { margin: 0px; font-size: 12px }
+.CodeRay pre {
+  margin: 0px;
+  font-size: 12px;
+}
 
 div.CodeRay { }
 
-span.CodeRay { white-space: pre; border: 0px; padding: 2px }
+span.CodeRay {
+  white-space: pre;
+  border: 0px;
+  padding: 2px;
+}
 
-table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
-table.CodeRay td { padding: 2px 4px; vertical-align: top }
+table.CodeRay {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 2px;
+}
+
+table.CodeRay td {
+  padding: 2px 4px;
+  vertical-align: top;
+}
 
 .CodeRay .line_numbers, .CodeRay .no {
   background-color: #eaeaea;
   color: gray;
   text-align: right;
 }
-.CodeRay .line_numbers tt { font-weight: bold }
-.CodeRay .no { padding: 0px 4px }
-.CodeRay .code { width: 100% }
+.CodeRay .line_numbers tt { font-weight: bold; }
+.CodeRay .no { padding: 0px 4px; }
+.CodeRay .code { width: 100%; }
 
-ol.CodeRay { font-size: 10pt }
-ol.CodeRay li { white-space: pre }
+ol.CodeRay { font-size: 10pt; }
+ol.CodeRay li { white-space: pre; }
 
-.CodeRay .code pre { overflow: auto }
-.af { color:#00C }
-.an { color:#007 }
-.av { color:#700 }
-.aw { color:#C00 }
-.bi { color:#509; font-weight:bold }
-.c  { color:#888 }
+.CodeRay .code pre { overflow: auto; }
+.af { color:#00C; }
+.an { color:#007; }
+.av { color:#700; }
+.aw { color:#C00; }
+.bi { color:#509; font-weight:bold; }
+.c  { color:#888; }
 
-.ch { color:#04D }
-.ch .k { color:#04D }
-.ch .dl { color:#039 }
+.ch { color:#04D; }
+.ch .k { color:#04D; }
+.ch .dl { color:#039; }
 
-.cl { color:#B06; font-weight:bold }
-.co { color:#036; font-weight:bold }
-.cr { color:#0A0 }
-.cv { color:#369 }
-.df { color:#099; font-weight:bold }
-.di { color:#088; font-weight:bold }
-.dl { color:black }
-.do { color:#970 }
-.ds { color:#D42; font-weight:bold }
-.e  { color:#666; font-weight:bold }
-.en { color:#800; font-weight:bold }
-.er { color:#F00; background-color:#FAA }
-.ex { color:#F00; font-weight:bold }
-.fl { color:#60E; font-weight:bold }
-.fu { color:#06B; font-weight:bold }
-.gv { color:#d70; font-weight:bold }
-.hx { color:#058; font-weight:bold }
-.i  { color:#00D; font-weight:bold }
-.ic { color:#B44; font-weight:bold }
+.cl { color:#B06; font-weight:bold; }
+.co { color:#036; font-weight:bold; }
+.cr { color:#0A0; }
+.cv { color:#369; }
+.df { color:#099; font-weight:bold; }
+.di { color:#088; font-weight:bold; }
+.dl { color:black; }
+.do { color:#970; }
+.ds { color:#D42; font-weight:bold; }
+.e  { color:#666; font-weight:bold; }
+.en { color:#800; font-weight:bold; }
+.er { color:#F00; background-color:#FAA; }
+.ex { color:#F00; font-weight:bold; }
+.fl { color:#60E; font-weight:bold; }
+.fu { color:#06B; font-weight:bold; }
+.gv { color:#d70; font-weight:bold; }
+.hx { color:#058; font-weight:bold; }
+.i  { color:#00D; font-weight:bold; }
+.ic { color:#B44; font-weight:bold; }
 
-.il { background: #eee }
-.il .il { background: #ddd }
-.il .il .il { background: #ccc }
-.il .dl { font-weight: bold ! important; color: #888 ! important }
+.il { background: #eee; }
+.il .il { background: #ddd; }
+.il .il .il { background: #ccc; }
+.il .dl { font-weight: bold ! important; color: #888 ! important; }
 
-.in { color:#B2B; font-weight:bold }
-.iv { color:#33B }
-.la { color:#970; font-weight:bold }
-.lv { color:#963 }
-.oc { color:#40E; font-weight:bold }
-.on { color:#000; font-weight:bold }
+.in { color:#B2B; font-weight:bold; }
+.iv { color:#33B; }
+.la { color:#970; font-weight:bold; }
+.lv { color:#963; }
+.oc { color:#40E; font-weight:bold; }
+.on { color:#000; font-weight:bold; }
 .op { }
-.pc { color:#038; font-weight:bold }
-.pd { color:#369; font-weight:bold }
-.pp { color:#579 }
-.pt { color:#339; font-weight:bold }
-.r  { color:#080; font-weight:bold }
+.pc { color:#038; font-weight:bold; }
+.pd { color:#369; font-weight:bold; }
+.pp { color:#579; }
+.pt { color:#339; font-weight:bold; }
+.r  { color:#080; font-weight:bold; }
 
-.rx { background-color:#fff0ff }
-.rx .k { color:#808 }
-.rx .dl { color:#404 }
-.rx .mod { color:#C2C }
-.rx .fu  { color:#404; font-weight: bold }
+.rx { background-color:#fff0ff; }
+.rx .k { color:#808; }
+.rx .dl { color:#404; }
+.rx .mod { color:#C2C; }
+.rx .fu  { color:#404; font-weight: bold; }
 
-.s  { background-color:#fff0f0 }
-.s  .s { background-color:#ffe0e0 }
-.s  .s  .s { background-color:#ffd0d0 }
-.s  .k { color:#D20 }
-.s  .dl { color:#710 }
+.s  { background-color:#fff0f0; }
+.s  .s { background-color:#ffe0e0; }
+.s  .s  .s { background-color:#ffd0d0; }
+.s  .k { color:#D20; }
+.s  .dl { color:#710; }
 
-.sh { background-color:#f0fff0 }
-.sh .k { color:#2B2 }
-.sh .dl { color:#161 }
+.sh { background-color:#f0fff0; }
+.sh .k { color:#2B2; }
+.sh .dl { color:#161; }
 
-.sy { color:#A60 }
-.sy .k { color:#A60 }
-.sy .dl { color:#630 }
+.sy { color:#A60; }
+.sy .k { color:#A60; }
+.sy .dl { color:#630; }
 
-.ta { color:#070 }
-.tf { color:#070; font-weight:bold }
-.ts { color:#D70; font-weight:bold }
-.ty { color:#339; font-weight:bold }
-.v  { color:#036 }
-.xt { color:#444 }
-
+.ta { color:#070; }
+.tf { color:#070; font-weight:bold; }
+.ts { color:#D70; font-weight:bold; }
+.ty { color:#339; font-weight:bold; }
+.v  { color:#036; }
+.xt { color:#444; }

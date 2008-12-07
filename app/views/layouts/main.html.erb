@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC
-    "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
-    "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg-flat.dtd">
-
+  "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+  "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg-flat.dtd">
+  
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
@@ -15,36 +15,41 @@
 </head>
 <body>
   <div id="page_container">
-    <h1 id="page_heading"><a href="<%=h config[:url] %>"><%=h config[:title] %></a></h1>
-
+    <h1 id="page_heading">
+      <a href="<%=h config[:url] %>"><code class="ruby">&lt;%</code> Ga<span class="ruby">rb</span>led</a>
+    </h1>
+  
     <div id="main">
+      <h2><code>garbled = Blog.new(:author => 'Ben Hamill')</code></h2>
       <%= yield %>
     </div>
-
+  
     <div id="navigation">
-      <h2>Pages</h2>
+      <h3>Pages</h3>
       <ul>
         <% page_links_for_navigation.each do |link| -%>
           <li><%= link_to(h(link.name), link.url) %></li>
         <% end -%>
       </ul>
+      
       <% unless category_links_for_navigation.empty? -%>
-        <h2>Categories</h2>
-        <ul>
-          <% category_links_for_navigation.each do |link| -%>
-            <li><%= link_to(h(link.name), link.url) %></li>
-          <% end -%>
-        </ul>
+      <h3>Categories</h3>
+      <ul>
+        <% category_links_for_navigation.each do |link| -%>
+        <li><%= link_to(h(link.name), link.url) %></li>
+        <% end -%>
+      </ul>
       <% end -%>
+      
       <form method="get" id="sform" action="http://www.google.com/search">
         <div>
-          <h2><label for="q">Search</label></h2>
-
+          <h3><label for="q">Search</label></h3>
+          
           <input type="text" id="q" value="" name="q" />
           <input type="hidden" name="sitesearch" value="<%=h config[:url] %>" />
         </div>
-      </form>
-    </div>    
+      </form> <!-- sform -->
+    </div> <!-- navigation -->
     
     <div id="footer"><%=h config[:title] %> &#169; <%=h config[:author, :name] %>. Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> and <%= link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{h(config[:url])}/posts.atom" %>. Powered by <a href="http://www.enkiblog.com" title="A ruby on rails blogging app for the fashionable developer">Enki</a>.</div>
   </div>

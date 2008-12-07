@@ -1,7 +1,7 @@
 # Configuration options for your blog - customise to taste
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
 title: Garbled
-url:   http://blog.benhamill.com
+url:   /
 author: 
   name:    Ben Hamill       # For copyright notice and ATOM feeds
   email:   enki_exceptions@benhamill.com # Exception emails will go here, and it is used in ATOM feeds
