@@ -5,7 +5,7 @@
   alt-headings:     #444
   font:             #333
   grey BG:          #ddd
-  cool grey alt:    #f3f3f5
+  cool grey alt:    #f0f0f2
   meta-data stuff:  #bbb
 
 
@@ -48,12 +48,21 @@ h1, h1 a, h2, h2 a, h3, h4, h5 {
 }
 
 h1#page_heading {
-  font-size: 24pt;
+  font-size: 4.5em;
   margin-bottom: 0;
 }
 
-h1#page_heading .ruby { /* Maked the 'rb' stand out. */
+h1#page_heading .ruby { /* Make the 'rb' stand out. */
   color: #a00000;
+}
+
+h1#page_heading a:hover {
+  text-decoration: none;
+  color: #a00000;
+}
+
+h1#page_heading a:hover .ruby {
+  color: #666;
 }
 
 h2 {
@@ -62,22 +71,28 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 2em;
   padding: 0.5ex 0.5em;
+  border-bottom: dotted 1px #a00000;
+  border-left: dotted 1px #a00000;
+  margin-right: 15px;
 }
+
 h3, h3 a {
   color: #444;
+}
+
+h3 a:hover {
+  text-decoration: none;
+  color: #a00000;
 }
 
 
 
 /*** Text *********************************************************************/
 p {
-  padding: 0px;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  margin-left: 0px;
-  margin-right: 0px;
+  padding: 0;
+  margin: 0.5em 0 1em;
   text-align: justify;
 }
 
@@ -137,8 +152,10 @@ img {
 }
 
 #navigation h3 {
-  display: inline;
-  padding: 0.5em 0 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
 }
 
 #navigation label {
@@ -147,20 +164,15 @@ img {
 }
 
 #navigation ul {
-  padding-left: 15px;
+  padding: 0;
   list-style: none;
+  margin-bottom: 1em;
 }
   
 #navigation ul li {
   padding: 0px;
   margin: 0px;
   font-weight: bold;
-}
-
-#navigation h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: verdana, arial, helvetica, sans-serif;
 }
 
 #navigation input {
@@ -170,6 +182,19 @@ img {
 
 #navigation form {
   padding: 0;
+}
+
+#navigation a {
+  border-left: solid 3px #ddd;
+  padding-left: 0.25em;
+  width: 100%;
+  display:block;
+}
+
+#navigation a:hover {
+  border-left: solid 3px #a00000;
+  text-decoration: none;
+  background-color: #f0f0f2;
 }
 
 
@@ -267,8 +292,12 @@ textarea {
   padding-right: 15px;
 }
 
+.commentlist li {
+  padding: 0.5ex 0.5em;
+}
+
 .alt, .container_alt {
-  background-color: #f3f3f5;
+  background-color: #f0f0f2;
 }
 
 div.comments div.body {
