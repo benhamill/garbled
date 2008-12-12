@@ -2,10 +2,13 @@
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
 title: Garbled
 url:   /
-author: 
-  name:    Ben Hamill       # For copyright notice and ATOM feeds
-  email:   enki_exceptions@benhamill.com # Exception emails will go here, and it is used in ATOM feeds
-  open_id:                  # These are used to login to the admin area
+author:
+  # For copyright notice and ATOM feeds
+  name:    Ben Hamill
+  # Exception emails will go here, and it is used in ATOM feeds
+  email:   enki_exceptions@benhamill.com
+  # These are used to login to the admin area
+  open_id:
     - http://bravodeltahotel.myopenid.com
 
 # Delete the following section if your site will not be acting as an OpenID delegate (http://wiki.openid.net/Delegation)
