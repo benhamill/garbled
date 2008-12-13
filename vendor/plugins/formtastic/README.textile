@@ -104,7 +104,6 @@ h2. Status
 It's incredibly opinionated, incomplete, a work in progress, messy around the edges, messy in the middle too, tightly coupled to the database, tightly coupled to "my way" of doing things and has an incomplete (but fast-growing) test suite, but I hope you try it and offer some suggestions and improvements any way.
 
 
-
 h2. Roadmap to 1.0
 
 * there's a few of TODOs left in the code, mainly around custom finders for the belongs_to associations (probably by passing in a collection as an option)
@@ -215,7 +214,6 @@ h2. Contributors
 * "Xavier Shay":http://rhnh.net
 * Bin Dong
 * "Ben Hamill":http://blog.benhamill.com/
-
 
 
 h2. Project Info
