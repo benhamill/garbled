@@ -1,7 +1,7 @@
 # Configuration options for your blog - customise to taste
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
 title: Garbled
-url:   /
+url:   http://benhamill.dreamhosters.com
 author:
   # For copyright notice and ATOM feeds
   name:    Ben Hamill
