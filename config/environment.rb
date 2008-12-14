@@ -7,6 +7,9 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 
+#For Passenger on DreamHost:
+ENV['GEM_PATH'] = '~/.gems/'
+
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -63,14 +66,14 @@ Rails::Initializer.run do |config|
   end
 end
 
-#require 'lesstile'
-#require 'coderay'
-#
-#require 'core_extensions/string'
-#require 'core_extensions/object'
-#
-#require 'openid'
-#require 'openid/store/filesystem'
-#require 'openid/extensions/sreg'
-#
-#require 'chronic'
+require 'lesstile'
+require 'coderay'
+
+require 'core_extensions/string'
+require 'core_extensions/object'
+
+require 'openid'
+require 'openid/store/filesystem'
+require 'openid/extensions/sreg'
+
+require 'chronic'
