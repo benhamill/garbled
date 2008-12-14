@@ -63,14 +63,14 @@ Rails::Initializer.run do |config|
   end
 end
 
-require 'lesstile'
-require 'coderay'
-
-require 'core_extensions/string'
-require 'core_extensions/object'
-
-require 'openid'
+#require 'lesstile'
+#require 'coderay'
+#
+#require 'core_extensions/string'
+#require 'core_extensions/object'
+#
+#require 'openid'
 #require 'openid/store/filesystem'
 #require 'openid/extensions/sreg'
-
-require 'chronic'
+#
+#require 'chronic'
