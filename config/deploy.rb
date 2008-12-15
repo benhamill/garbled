@@ -29,8 +29,8 @@ namespace :deploy do
     spec = {
       'production' => {
         'adapter' => 'mysql',
-        'database' => user,
-        'username' => user,
+        'database' => 'benhamill_garbled_production',
+        'username' => 'garbled',
         'password' => mysql_password
       }
     }
