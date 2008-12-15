@@ -47,5 +47,5 @@ namespace :deploy do
   task :copy_production_database_config do
     run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
-  after 'deplot:update_code', :copy_production_database_config
+  after 'deploy:update_code', :copy_production_database_config
 end
