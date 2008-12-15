@@ -119,10 +119,6 @@ a {
   text-decoration: none;    
 }
   
-small a, label a {
-  text-decoration: underline;
-}
-
 a:hover {
   text-decoration: underline;    
 }
@@ -130,6 +126,10 @@ a:hover {
 #footer a {
   color: gray;
   text-decoration: underline;
+}
+
+#footer a:hover {
+  color: #a00000;
 }
 
 img {
@@ -226,8 +226,10 @@ div.meta {
   border-bottom: dotted 1px #bbb;
 }
 
-.meta a:hover {
+.meta a:hover, .archive-month .tags a:hover {
   text-decoration: none;
+  border-color: #a00000;
+  color: #a00000;
 }
 
 .meta ul li {
