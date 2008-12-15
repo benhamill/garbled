@@ -31,7 +31,10 @@ namespace :deploy do
         'adapter' => 'mysql',
         'database' => 'benhamill_garbled_production',
         'username' => 'garbled',
-        'password' => mysql_password
+        'password' => mysql_password,
+        'encoding' => 'utf8',
+        'pool' => 5,
+        'host' => 'mysql.benhamill.dreamhosters.com'
       }
     }
     
