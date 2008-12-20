@@ -225,6 +225,10 @@ div.meta {
   border-bottom: dotted 1px #bbb;
 }
 
+.meta a.ruby {
+  background-color: #eee;
+}
+
 .meta a:hover, .archive-month .tags a:hover {
   text-decoration: none;
   border-color: #a00000;
