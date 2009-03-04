@@ -180,10 +180,6 @@ img {
   width: 100%;
 }
 
-#navigation form {
-  padding: 0;
-}
-
 #navigation a {
   border-left: solid 3px #ddd;
   padding-left: 0.25em;
