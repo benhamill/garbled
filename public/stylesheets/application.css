@@ -22,7 +22,8 @@ body {
 
 #page_container {
   min-height: 400px;
-  padding: 0 150px;
+  width: 800px;
+  margin: 0 auto;
 }
 
 #main {
@@ -360,7 +361,6 @@ hr {
 
 .related {
   background-color: #f8f8f8;
-  border: 1px solid silver;
   padding: 10px;
   margin-right: 15px;
 }
